@@ -1,26 +1,25 @@
-public class Main{
-    public static void main (String[] args){
-        Integer [] numere = new Integer[] {1, 5, 33, 293, 330, 1202, 33044};
-        System.out.println("Suma numerelor este: " + suma(numere) + ".");
+import java.util.Random;
 
-        numereImpare(numere);
+public class Homework3 {
+
+    public static void main(String[] args) {
+        int donatiiFinale = 1000;
+        donatiiSuma(donatiiFinale);
     }
 
-    public static Integer suma(Integer [] arr) {
-        Integer sum = 0;
-        for (Integer num : arr) {
-            sum +=num;
-        }
-        return sum;
-    }
+    public static void donatiiSuma(int target) {
+        Random random = new Random();
+        int sumaTotala = 0;
+        int numarDonatii = 0;
 
-    public static void numereImpare(Integer[] arr) {
-        System.out.print("Numere impare: ");
-        for (Integer numere : arr) {
-            if (numere % 2 != 0) {
-                System.out.print(numere + " ");
-            }
+        while (sumaTotala < target) {
+            int donatie = random.nextInt(100);
+            sumaTotala += donatie;
+            numarDonatii++;
+
+            System.out.println("Donatie: " + donatie + " euro");
         }
-        System.out.println();
+
+        System.out.println("Suma dorita de 1000 de euro a fost atinsa. Multumim!");
     }
 }
